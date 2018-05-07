@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import nl.probotix.ftc.relicrecovery.EthanHardware;
 
 /**
- * Created by ProBotiX on 5-5-2018.
+ * Copyright 2018 (c) ProBotiX
  */
 
 public class AutoHelper {

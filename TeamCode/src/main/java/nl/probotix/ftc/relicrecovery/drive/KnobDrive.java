@@ -12,7 +12,7 @@ import nl.probotix.ftc.relicrecovery.LiftServo;
 import nl.probotix.ftc.relicrecovery.LiftStage;
 
 /**
- * Created by ProBotiX on 5-5-2018.
+ * Copyright 2018 (c) ProBotiX
  */
 
 @TeleOp( name = "Ethan: KnobDrive", group = "Ethan")
