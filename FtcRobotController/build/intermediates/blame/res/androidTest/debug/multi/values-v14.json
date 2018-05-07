@@ -1,0 +1,28 @@
+[
+    {
+        "outputFile": "C:\\Users\\ProBotiX\\Desktop\\ftc-app\\FtcRobotController\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v14\\values-v14.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 201
+                },
+                "from": {
+                    "file": "C:\\Users\\ProBotiX\\.android\\build-cache\\cfec4ee95914972b63ba5c5db154024cbb2dcb1e\\output\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 201
+                    }
+                }
+            }
+        ]
+    }
+]
