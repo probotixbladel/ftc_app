@@ -19,7 +19,7 @@ import nl.probotix.ftc.relicrecovery.LiftStage;
 public class KnobDrive extends LinearOpMode {
 
     private EthanHardware ethanHardware;
-    private ElapsedTime runtime;
+    private ElapsedTime runtime = new ElapsedTime();
     private String opModeName = "KnobDrive";
 
     @Override
@@ -39,6 +39,7 @@ public class KnobDrive extends LinearOpMode {
 
         waitForStart();
         //user pressed start
+        runtime.reset();
         ethanHardware.telemetryData(telemetry, opModeName, "Status", "Opmode started");
 
 
@@ -73,6 +74,7 @@ public class KnobDrive extends LinearOpMode {
             double pwrFR = (gamepad1.left_stick_y-gamepad1.right_stick_x-gamepad1.left_stick_x) * gamepad1.right_trigger;
             double pwrRL = (gamepad1.left_stick_y+gamepad1.right_stick_x-gamepad1.left_stick_x) * gamepad1.right_trigger;
             double pwrRR = (gamepad1.left_stick_y-gamepad1.right_stick_x+gamepad1.left_stick_x) * gamepad1.right_trigger;
+            ethanHardware.setMotorPowers(pwrFL, pwrFR, pwrRL, pwrRR);
 
 
             //INTAKE
@@ -120,7 +122,8 @@ public class KnobDrive extends LinearOpMode {
                     "Lift ticks: " + ethanHardware.liftMotor.getCurrentPosition() + "\n" +
                     "Lift target: " + ethanHardware.liftMotor.getTargetPosition() + "\n" +
                     "Servo position: " + ethanHardware.blowplankServo.getPosition() + "\n" +
-                    "Loop time: " + (System.currentTimeMillis() - startTime) + "ms");
+                    "Loop time: " + (System.currentTimeMillis() - startTime) + "ms\n" +
+                    "Total time: " + runtime.seconds());
             //ethanHardware.telemetryData(telemetry, opModeName, "Status", "Loop is taking " + (System.currentTimeMillis() - startTime) + "ms");
         }
 

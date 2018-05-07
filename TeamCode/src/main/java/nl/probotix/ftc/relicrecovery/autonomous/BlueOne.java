@@ -20,7 +20,7 @@ import nl.probotix.ftc.relicrecovery.LiftServo;
 import nl.probotix.ftc.relicrecovery.LiftStage;
 
 /**
- * Created by ProBotiX on 4-5-2018.
+ * Copyright 2018 (c) ProBotiX
  */
 
 @Autonomous(name = "EthanAuto: Blue One", group = "EthanAuto")

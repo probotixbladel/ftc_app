@@ -31,6 +31,7 @@ public class AutoTransitioner extends Thread {
     @Override
     public void run() {
         try {
+            //noinspection InfiniteLoopStatement
             while (true) { //Loop
                 synchronized (this) { //Synchronized to prevent weird conditions
                     //If there is a transition set up and the active op mode is no longer the one

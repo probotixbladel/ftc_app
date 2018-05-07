@@ -10,31 +10,24 @@ import nl.probotix.ftc.relicrecovery.EthanHardware;
  * Copyright 2018 (c) ProBotiX
  */
 
-public class AutoHelper {
+class AutoHelper {
 
-    public boolean autoTransmit = false;
+    boolean autoTransmit = false;
 
     private EthanHardware ethanHardware;
     private LinearOpMode opMode;
 
-    private double WHEEL_DIAMETER = 100;
-    private double WHEEL_SEPERATION_WIDTH = 336;
-    private double WHEEL_SEPARATION_LENGTH = 352;
-    private double GEAR_RATIO = 1.6;
-    private double COUNTS_PER_REV = 1478.4;
-    private double WHEEL_MAX_RPM = 125;
-
     //TICKS TO DRIVE WHEN SEEING CRYPTOBOX
-    public int FIRST_COLUMN = 1000;
-    public int SECOND_COLUMN = 3000;
-    public int THIRD_COLUMN = 5000;
+    int FIRST_COLUMN = 1000;
+    int SECOND_COLUMN = 3000;
+    int THIRD_COLUMN = 5000;
 
-    public AutoHelper(EthanHardware ethanHardware, LinearOpMode opMode) {
+    AutoHelper(EthanHardware ethanHardware, LinearOpMode opMode) {
         this.ethanHardware = ethanHardware;
         this.opMode = opMode;
     }
 
-    public void driveAndWait(double linearX, double linearY, double angularZ, double time, double timeout) {
+    void driveAndWait(double linearX, double linearY, double angularZ, double time, double timeout) {
         driveEncoded(linearX, linearY, angularZ, time);
         ElapsedTime runtime = new ElapsedTime();
         runtime.reset();
@@ -45,9 +38,17 @@ public class AutoHelper {
         }
     }
 
-    public void driveEncoded(double linearX, double linearY, double angularZ, double time) {
+    void driveEncoded(double linearX, double linearY, double angularZ, double time) {
+        //Needed numbers
+        double WHEEL_DIAMETER = 100;
+        double WHEEL_SEPERATION_WIDTH = 336;
+        double WHEEL_SEPARATION_LENGTH = 352;
+        double GEAR_RATIO = 1.6;
+        double COUNTS_PER_REV = 1478.4;
+        double WHEEL_MAX_RPM = 125;
 
         double avwB = angularZ / 180 * Math.PI / time;
+
 
         double avwFL = (1 / (WHEEL_DIAMETER / 2)) * (linearX / time - linearY / time - (WHEEL_SEPERATION_WIDTH + WHEEL_SEPARATION_LENGTH) / 2 * avwB);
         double avwFR = (1 / (WHEEL_DIAMETER / 2)) * (linearX / time + linearY / time + (WHEEL_SEPERATION_WIDTH + WHEEL_SEPARATION_LENGTH) / 2 * avwB);

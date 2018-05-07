@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 /**
- * Created by robocup on 6-3-2018.
+ * Copyright 2018 (c) ProBotiX
  */
 
 public class EthanHardware {
@@ -33,7 +33,7 @@ public class EthanHardware {
         this.init();
     }
 
-    public void init() {
+    private void init() {
         /*During init we:
         *  - Get all hardware from hardware mapping
         *  - reset all wheel powers
